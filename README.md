@@ -80,9 +80,6 @@ Valid JSON cannot contain comments, so remember to remove them first!
       "floodProtection": false, // On by default
       "floodProtectionDelay": 1000 // 500 by default
     },
-    // Makes the bot hide the username prefix for messages that start
-    // with one of these characters (commands):
-    "commandCharacters": ["!", "."],
     // Prevent messages posted by Slackbot (e.g. Slackbot responses)
     // from being posted into the IRC channel:
     "muteSlackbot": true, // Off by default
