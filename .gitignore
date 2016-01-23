@@ -30,3 +30,7 @@ node_modules
 
 dist/
 .nyc_output/
+
+# IntelliJ
+/.idea
+*.iml
