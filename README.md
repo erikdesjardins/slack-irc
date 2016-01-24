@@ -56,6 +56,7 @@ Valid JSON cannot contain comments, so remember to remove them first!
   {
     "nickname": "test2",
     "server": "irc.testbot.org",
+    "slackUser": "yourSlackUsername",
     "token": "slacktoken2",
     "channelMapping": {
       "#other-slack": "#new-irc-channel"
@@ -66,6 +67,7 @@ Valid JSON cannot contain comments, so remember to remove them first!
   {
     "nickname": "test",
     "server": "irc.bottest.org",
+    "slackUser": "yourSlackUsername",
     "token": "slacktoken", // Your bot user's token
     "autoSendCommands": [ // Commands that will be sent on connect
       ["PRIVMSG", "NickServ", "IDENTIFY password"],
@@ -81,10 +83,14 @@ Valid JSON cannot contain comments, so remember to remove them first!
       "floodProtectionDelay": 1000 // 500 by default
     },
     // Sends messages to Slack whenever a user joins/leaves an IRC channel:
-    "ircStatusNotices": {
+    "ircStatusNotices": { // These are all disabled by default
       "join": false, // Don't send messages about joins
-      "leave": true
-    }
+      "leave": true,
+      "changeNick": true,
+      "modes": true
+    },
+    // How long the last DM recipient should be remembered, default 10 minutes
+    "rememberRecipientsFor": 3600000 // 1 hour
   }
 ]
 ```
