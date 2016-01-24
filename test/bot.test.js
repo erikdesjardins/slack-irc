@@ -193,19 +193,6 @@ describe('Bot', function() {
     ClientStub.prototype.say.should.have.been.calledWith('#irc', ircText);
   });
 
-  it('should not send messages from slackbot to irc if slackbot muting is on',
-  function() {
-    this.bot.muteSlackbot = true;
-    const message = {
-      user: 'USLACKBOT',
-      getBody() {
-        return 'A message from Slackbot';
-      }
-    };
-    this.bot.sendToIRC(message);
-    ClientStub.prototype.say.should.not.have.been.called;
-  });
-
   it('should parse text from slack when sending messages', function() {
     const text = '<@USOMEID> <@USOMEID|readable>';
     const message = {
